@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Product Entry</title>
+        <link href="./css/default.css" 
+              rel="stylesheet" type="text/css"/> 
+    </h:head>
+    <h:body>
+
+        <f:view>
+            <h:form>
+                <h:panelGrid columns="3">
+                    <h:outputLabel>Product ID:</h:outputLabel>
+                    <h:inputText value="#{productBean2.pid}" required="true"
+                                 requiredMessage="You must enter a Product ID"
+                                 id="productID"/>
+                    <h:message for="productID" styleClass="error"/>
+                    <h:outputLabel>Product Name:</h:outputLabel>
+                    <h:inputText value="#{productBean2.pname}" required="true"
+                                 requiredMessage="You must enter a Product Name"
+                                 id="productName"/>
+                    <h:message for="productName" styleClass="error"/>
+                    <h:outputLabel>Purchase Price:</h:outputLabel>
+                    <h:inputText value="#{productBean2.price}" required="true"
+                                 requiredMessage="You must enter an Purchase Price"
+                                 converterMessage="Purchase Price must be a number"
+                                 id="price"/>
+                    <h:message for="price" styleClass="error"/>
+                    <h:outputLabel>Quantity:</h:outputLabel>
+                    <h:inputText value="#{productBean2.qty}" required="true"
+                                 requiredMessage="You must enter a Quantity"
+                                 converterMessage="Quantity must be a whole number"
+                                 id="qty"/>
+                    <h:message for="qty" styleClass="error"/>
+
+                </h:panelGrid>
+                <h:commandButton value="Purchase"
+                                 action="#{productBean2.doPurchase}"/>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+

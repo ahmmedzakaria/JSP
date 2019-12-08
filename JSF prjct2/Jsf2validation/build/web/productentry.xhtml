@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Product Entry</title>
+        <link href="./css/default.css" 
+              rel="stylesheet" type="text/css"/> 
+    </h:head>
+    <h:body>
+        
+        <f:view>
+            <h:form>
+                <h:messages styleClass="error"/>
+                <h:panelGrid columns="2">
+                    <h:outputLabel>Product ID:</h:outputLabel>
+                    <h:inputText value="#{productBean.pid}"/>
+                    <h:outputLabel>Product Name:</h:outputLabel>
+                    <h:inputText value="#{productBean.pname}"/>
+                    <h:outputLabel>Purchase Price:</h:outputLabel>
+                    <h:inputText value="#{productBean.price}"/>
+                    <h:outputLabel>Quantity:</h:outputLabel>
+                    <h:inputText value="#{productBean.qty}"/>
+                   
+                </h:panelGrid>
+                <h:commandButton value="Purchase"
+                                 action="#{productBean.doPurchase}"/>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+

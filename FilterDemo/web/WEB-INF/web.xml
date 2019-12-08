@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <!-- Use the URL http://host/app/todays-special 
+       for the TodaysSpecialServlet. Filters can then be applied
+       to the URL (most common) or name (done once in a while).
+  -->
+<!--    <servlet>
+        <servlet-name>TodaysSpecial</servlet-name>
+        <servlet-class>
+      servlets.TodaysSpecialServlet
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TodaysSpecial</servlet-name>
+        <url-pattern>/todays-special</url-pattern> 
+    </servlet-mapping>-->
+   <!-- Use the URL http://host/app/LongServlet for the servlet
+       that generates long (but very exciting!) output. 
+  -->
+    <servlet>
+        <servlet-name>LongServlet</servlet-name>
+        <servlet-class>servlets.LongServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LongServlet</servlet-name>
+        <url-pattern>/LongServlet</url-pattern> 
+    </servlet-mapping>
+    
+    
+    
+    
+    
+    
+    <!-- Register the name "SimpleFilter" for SimpleFilter -->
+<!--    <filter>
+        <filter-name>SimpleFilter</filter-name>
+        <filter-class>filters.SimpleFilter</filter-class>
+    </filter>
+     Apply the SimpleFilter filter to home page. 
+    <filter-mapping>
+        <filter-name>SimpleFilter</filter-name>
+        <url-pattern>/index.jsp</url-pattern>
+    </filter-mapping>-->
+    
+     <!-- Register the name "LogFilter" for SimpleFilter -->
+<!--    <filter>
+        <filter-name>LogFilter</filter-name>
+        <filter-class>filters.LogFilter</filter-class>
+    </filter>
+   
+     
+     Apply the Logger filter to all incoming URLs. 
+    
+    <filter-mapping>
+        <filter-name>LogFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>-->
+    
+    
+    <!-- Register the name "BannedAccessFilter" for 
+       filters.BannedAccessFilter. 
+       Supply an initialization parameter: 
+       bannedSites.
+  -->
+<!--    <filter>
+        <filter-name>BannedAccessFilter</filter-name>
+        <filter-class>
+     filters.BannedAccessFilter
+        </filter-class>
+        <init-param>
+            <param-name>bannedSites</param-name>
+            <param-value>
+        www.competingsite.com
+        www.bettersite.com
+        0:0:0:0:0:0:0:1
+            </param-value>
+        </init-param>
+    </filter>
+  
+   Apply BannedAccessFilter to the URL 
+       http://host/app/todays-special 
+  
+    <filter-mapping>
+        <filter-name>BannedAccessFilter</filter-name>
+        <url-pattern>/todays-special</url-pattern>
+    </filter-mapping>-->
+ 
+<!--   Register the name "CompressionFilter" for 
+       filters.CompressionFilter. -->
+  
+<!--    <filter>
+        <filter-name>CompressionFilter</filter-name>
+        <filter-class>
+      filters.CompressionFilter
+        </filter-class>
+    </filter>
+   Apply CompressionFilter to the URL 
+      http://host/app/LongServlet". 
+  
+    <filter-mapping>
+        <filter-name>CompressionFilter</filter-name>
+        <url-pattern>/LongServlet</url-pattern>
+    </filter-mapping>-->
+  
+  
+<!--   Disable the invoker servlet. -->
+    <servlet>
+        <servlet-name>NoInvoker</servlet-name>
+        <servlet-class>servlets.NoInvokerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NoInvoker</servlet-name>
+        <url-pattern>/servlets/*</url-pattern>
+    </servlet-mapping>
+<!--  <filter>
+        <filter-name>EncryptFilter</filter-name>
+        <filter-class>filters.EncryptFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncryptFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>-->
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>

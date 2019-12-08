@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head><title>Register</title>
+        <link href="./css/styles.css" 
+              rel="stylesheet" type="text/css"/> 
+    </h:head>
+    <h:body>
+        <div align="center">
+            <h1 class="title">Register</h1>
+            <br/>
+            <fieldset><legend>Types and Required: Messages Next to Fields</legend>
+                <h:form>
+                    <h:panelGrid columns="3" styleClass="formTable">
+                        First Name: 
+                        <h:inputText value="#{registrationBean.firstName}"
+                                     required="true"
+                                     requiredMessage="First name required"
+                                     id="firstNameField"/>
+                        <h:message for="firstNameField" styleClass="error"/>        
+
+                        Middle Name: 
+                        <h:inputText value="#{registrationBean.middleName}"/>
+                        <h:outputText value=""/> <!-- Dummy value for third column -->
+
+                        Last Name: 
+                        <h:inputText value="#{registrationBean.lastName}"
+                                     required="true"
+                                     requiredMessage="Last name required"
+                                     id="lastNameField"/>
+                        <h:message for="lastNameField" styleClass="error"/> 
+
+                        Employee ID: 
+                        <h:inputText value="#{registrationBean.employeeId}"
+                                     required="true"
+                                     requiredMessage="Employeed ID required"
+                                     id="employeeIdField"/>
+                        <h:message for="employeeIdField" styleClass="error"/>            
+
+                        Building Number: 
+                        <h:inputText value="#{registrationBean.buildingNumber}"
+                                     required="true"
+                                     requiredMessage="Building number required"
+                                     converterMessage="Building number must be a whole number"
+                                     id="buildingNumberField"/>
+                        <h:message for="buildingNumberField" styleClass="error"/>
+                    </h:panelGrid>
+                    <h:commandButton value="Register" 
+                                     action="#{registrationBean.doRegistration}"/>
+                </h:form>
+            </fieldset>
+
+        </div></h:body></html>

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <style>
+            .pg{
+                background-color: #4b9c3d;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <f:view>
+
+            <h:form id="ff">
+                
+                <h:panelGrid columns="2" styleClass="pg" >
+                    <f:facet name="header">
+                        <h:outputText value="Login"/>
+                    </f:facet>
+                    <h:outputLabel>User Name</h:outputLabel> 
+                    <h:inputText id="un" value="#{loginBean.uname}"/>
+                    <h:outputLabel>Password</h:outputLabel> 
+                    <h:inputSecret id="pp" value="#{loginBean.pass}"/>
+                    <h:commandButton value="Login" action="#{loginBean.loginAction}"/>
+                </h:panelGrid>
+                <h:outputText value="#{loginBean.msg}"/>
+                <a href="newjsf/">go</a>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+

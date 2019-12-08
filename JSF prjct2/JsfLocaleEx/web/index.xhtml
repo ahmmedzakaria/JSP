@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <f:view locale="#{localeBean.locale}">
+        <h:head><title>#{prompts.registrationTitle}</title>
+            <link href="./css/styles.css" 
+                  rel="stylesheet" type="text/css"/> 
+        </h:head>
+        <h:body>
+
+            <h:form>
+                <h:panelGrid columns="1">
+                    <h1 class="title">#{prompts.registrationTitle}</h1>
+                    <h3>#{prompts.registrationText}</h3>
+                </h:panelGrid>
+                <h:panelGrid columns="2">
+                    #{prompts.firstName}: <h:inputText/>
+                    #{prompts.lastName}: <h:inputText/>
+                    #{prompts.emailAddress}: <h:inputText/>
+                </h:panelGrid>
+                <h:panelGrid columns="4">
+                    <h:commandLink value="#{prompts.englishLabel}" 
+                                     actionListener="#{localeBean.setEnglish}"
+                                     immediate="true"/>
+                    <h:commandButton value="#{prompts.spanishLabel}" 
+                                     actionListener="#{localeBean.setSpanish}"
+                                     immediate="true"/>
+                    <h:commandButton value="#{prompts.frenchLabel}" 
+                                     actionListener="#{localeBean.setFrench}"
+                                     immediate="true"/>
+                    <h:commandButton value="#{prompts.bangLabel}" 
+                                     actionListener="#{localeBean.setBangla}"
+                                     immediate="true"/>
+                </h:panelGrid>
+            </h:form>
+        </h:body>
+    </f:view>
+</html>

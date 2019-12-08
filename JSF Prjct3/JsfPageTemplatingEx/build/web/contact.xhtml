@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <ui:composition template="/templates/page-template.xhtml">
+        <ui:define name="title">
+            Title for Contact page
+        </ui:define>
+        <div id="container">
+            <ui:define name="top">
+                <div id="blank"></div>
+                <div id="menu">
+                    <ui:include src="menu.xhtml"/>
+                </div>
+            </ui:define>
+            <ui:define name="right">
+                <h2>Sample Header</h2>
+                <p>Text to be included to right content</p>
+                <p>Text to be included to right content</p>
+                <p>Text to be included to right content</p>
+                <p>Text to be included to right content</p>
+                <p>Text to be included to right content</p>
+                <p>Text to be included to right content</p>
+            </ui:define>
+            <ui:define name="content">
+                <h:form id="ff">
+                    <h2>Content here.</h2> <p>column long long column very long fill fill fill long text text column text silly very make long very fill silly make make long make text fill very long text column silly silly very column long very column filler fill long make filler long silly very long silly silly silly long filler make column filler make silly long long fill very.</p>
+                    <p>very make make fill silly long long filler column long make silly silly column filler fill fill very filler text fill filler column make fill make text very make make very fill fill long make very filler column very long very filler silly very make filler silly make make column column </p>
+                    <h:graphicImage name="admin.gif" library="images" style="float: right"/>
+                    <h:panelGrid columns="2">
+                        <h:outputLabel>Contact Information</h:outputLabel> 
+                        
+                    </h:panelGrid>
+                </h:form>
+            </ui:define>
+        </div>
+    </ui:composition>
+
+</html>
